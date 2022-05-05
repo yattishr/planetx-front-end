@@ -21,7 +21,10 @@ body {
   }
 }
 
-
+table {
+  border-collapse: collapse;
+  border-color: rgba(77, 8, 90, 0.396);
+}
 .middle {
   background-image: url('../img/middle.png');
   background-repeat: no-repeat;
