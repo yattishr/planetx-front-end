@@ -1,8 +1,7 @@
-const btn = document.getElementById('menu-btn')
-const nav = document.getElementById('menu')
 
-btn.addEventListener('click', () => {
-  btn.classList.toggle('open')
-  nav.classList.toggle('flex')
-  nav.classList.toggle('hidden')
-})
+
+import { rpc, sc, u } from "@cityofzion/neon-core";
+
+const url = "http://localhost:20332";
+
+const rpcClient = new rpc.RPCClient(url);
