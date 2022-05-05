@@ -7,6 +7,17 @@ module.exports = {
       lg: '976px',
       xl: '1440px',
     },
+    // FontFace: {
+    //   'Trispace': {
+    //     src: [
+    //       'https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap',
+    //       'https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap',
+    //     ],
+    //     fontDisplay: 'swap',
+    //     fontStyle: 'normal',
+    //     fontWeight: '400',
+    //   },
+    // },
     extend: {
       colors: {
         brightRed: 'hsl(12, 88%, 59%)',
