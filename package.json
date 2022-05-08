@@ -1,19 +1,51 @@
 {
-  "name": "tailwind-manage-landing",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "build": "tailwindcss -i ./input.css -o ./css/main.css",
-    "watch": "tailwindcss -i ./input.css -o ./css/main.css --watch"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "tailwindcss": "^3.0.23"
-  },
-  "dependencies": {
-    "@cityofzion/neon-js": "^5.0.0"
-  }
+	"private": true,
+	"name": "@rentfuse-labs/neo-wallet-adapter-nextjs-starter",
+	"version": "0.3.1",
+	"author": "Rentfuse Labs",
+	"repository": "https://github.com/rentfuse-labs/neo-wallet-adapter",
+	"license": "Apache-2.0",
+	"files": [
+		"components",
+		"pages",
+		"public",
+		"styles",
+		".eslintrc.json",
+		"next.config.js",
+		"next-env.d.ts",
+		"package.json",
+		"README.md",
+		"tsconfig.json"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"clean": "shx rm -rf .next",
+		"dev": "next dev",
+		"build": "yarn clean && next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@cityofzion/neon-js": "^5.0.0",
+		"@rentfuse-labs/neo-wallet-adapter-base": "^0.3.1",
+		"@rentfuse-labs/neo-wallet-adapter-react": "^0.3.1",
+		"@rentfuse-labs/neo-wallet-adapter-react-ui": "^0.3.1",
+		"@rentfuse-labs/neo-wallet-adapter-walletconnect": "^0.3.1",
+		"@rentfuse-labs/neo-wallet-adapter-wallets": "^0.3.1",
+		"next": "^11.1.2",
+		"next-compose-plugins": "^2.2.1",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"tailwindcss": "^3.0.23"
+	},
+	"devDependencies": {
+		"@types/react": "^17.0.24",
+		"eslint": "^7.32.0",
+		"eslint-config-next": "^11.1.2",
+		"next-transpile-modules": "^8.0.0",
+		"shx": "^0.3.3",
+		"typescript": "^4.4.3"
+	}
 }
