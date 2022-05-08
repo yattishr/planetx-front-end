@@ -30,6 +30,7 @@
 	"dependencies": {
 		"@cityofzion/neon-js": "^5.0.0",
 		"@rentfuse-labs/neo-wallet-adapter-base": "^0.3.1",
+		"@rentfuse-labs/neo-wallet-adapter-neoline": "^0.3.1",
 		"@rentfuse-labs/neo-wallet-adapter-react": "^0.3.1",
 		"@rentfuse-labs/neo-wallet-adapter-react-ui": "^0.3.1",
 		"@rentfuse-labs/neo-wallet-adapter-walletconnect": "^0.3.1",

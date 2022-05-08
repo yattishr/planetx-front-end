@@ -1,6 +1,7 @@
 import { useWallet } from '@rentfuse-labs/neo-wallet-adapter-react';
 import { waitTx, WitnessScope, WalletNotConnectedError } from '@rentfuse-labs/neo-wallet-adapter-base';
 import { WalletDisconnectButton, WalletMultiButton } from '@rentfuse-labs/neo-wallet-adapter-react-ui';
+import * as neolineN3 from "@rentfuse-labs/neo-wallet-adapter-neoline"
 import { u, sc, wallet } from '@cityofzion/neon-js';
 import { NextPage } from 'next';
 import Head from 'next/head';
@@ -9,8 +10,42 @@ import Neon from '@cityofzion/neon-js';
 import { useState, useCallback, useEffect } from 'react';
 
 const Index: NextPage = () => {
-	const { connected, getNetworks, address, invoke } = useWallet();
-	// const { account, setAccount } = useState(null);
+
+
+
+// 	neolineN3 getProvider()
+// .then(provider => {
+//     const {
+//         name,
+//         website,
+//         version,
+//         compatibility,
+//         extra
+//     } = provider;
+
+//     console.log('Provider name: ' + name);
+//     console.log('Provider website: ' + website);
+//     console.log('Provider dAPI version: ' + version);
+//     console.log('Provider dAPI compatibility: ' + JSON.stringify(compatibility));
+//     console.log('Extra provider specific atributes: ' + JSON.stringify(compatibility));
+// })
+// .catch((error) => {
+//     const {type, description, data} = error;
+//     switch(type) {
+//         case 'NO_PROVIDER':
+//             console.log('No provider available.');
+//             break;
+//         case 'CONNECTION_DENIED':
+//             console.log('The user rejected the request to connect with your dApp.');
+//             break;
+//         default:
+//             // Not an expected error object.  Just write the error to the console.
+//             console.error(error);
+//             break;
+//     }
+// });
+	const { connected, getNetworks, address, invoke, connect } = useWallet();
+ const { account, setAccount } = useState(null);
 
 	const [walletNetwork, setWalletNetwork] = useState<string | null>(null);
 
@@ -63,6 +98,8 @@ const Index: NextPage = () => {
 		const contract = new Neon.experimental.SmartContract(Neon.u.HexString.fromHex(scriptHash), {
 			networkMagic,
 			rpcAddress,
+			// @ts-ignore
+			account
 		});
 
 		const signers = [
@@ -73,7 +110,7 @@ const Index: NextPage = () => {
 			},
 		];
 
-		let res = await contract.testInvoke(
+		let res = await contract.invoke(
 			'getNumber',
 			[
 			
@@ -83,6 +120,8 @@ const Index: NextPage = () => {
 		);
 		console.log(JSON.stringify(res));
 	}, [address, connected, invoke]);
+
+
 	return (
 		<>
 		 <Head>
@@ -104,9 +143,6 @@ const Index: NextPage = () => {
         
         </div>
       
-     
-
-        
         <button
           id="menu-btn"
           className="block hamburger md:hidden focus:outline-none focus:text-white"
@@ -155,10 +191,17 @@ const Index: NextPage = () => {
         className="container  flex flex-col items-center justify-center px-6 mx-auto mt-2  md:space-y-0 md:flex-row middle"
       >
        
-        <button type="button" className="inline-block px-6 py-4 bg-[#DC2984] text-white font-bold text-md leading-tight  rounded shadow-md hover:bg-[#C829DD] hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Connect Wallet</button>
+      
+<WalletMultiButton  style={{ 
+	'backgroundColor': '#DC2984',
+}}  />
 
-    
-   
+
+
+
+
+
+
       </div>
     </section>
 
