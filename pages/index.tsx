@@ -10,7 +10,7 @@ import { useState, useCallback, useEffect } from 'react';
 
 const Index: NextPage = () => {
 	const { connected, getNetworks, address, invoke } = useWallet();
-	const { account, setAccount } = useState(null);
+	// const { account, setAccount } = useState(null);
 
 	const [walletNetwork, setWalletNetwork] = useState<string | null>(null);
 
@@ -78,7 +78,7 @@ const Index: NextPage = () => {
 			[
 			
 			],
-			// @t
+			// @ts-ignore
 			signers,
 		);
 		console.log(JSON.stringify(res));
