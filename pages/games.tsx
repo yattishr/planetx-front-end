@@ -73,6 +73,9 @@ const Index: NextPage = () => {
           <p className="text-white -rotate-12 text-5xl py-6"> Games </p>
 
           <div className="flex flex-row justify-between gap-2 overflow-x-auto">
+            <Link href={'bet'}>
+            
+            
             <div className="rounded-lg shadow-lg bg-[#8984CA]   max-w-sm min-h-fit">
               <div className="p-6 rounded rounded-lg    ">
                 <div className="rounded-lg shadow-lg  bg-white  bg-[#8A86C4] rounded  max-w-sm">
@@ -91,6 +94,7 @@ const Index: NextPage = () => {
                 </div>
               </div>
             </div>
+            </Link>
 
             <div className="rounded-lg shadow-lg bg-[#8984CA]   max-w-sm min-h-fit">
               <div className="p-6 rounded rounded-lg    ">
