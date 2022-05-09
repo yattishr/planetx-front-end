@@ -29,6 +29,7 @@
 	},
 	"dependencies": {
 		"@cityofzion/neon-js": "^5.0.0",
+		"@json-rpc-tools/utils": "^1.7.6",
 		"@rentfuse-labs/neo-wallet-adapter-base": "^0.3.1",
 		"@rentfuse-labs/neo-wallet-adapter-neoline": "^0.3.1",
 		"@rentfuse-labs/neo-wallet-adapter-react": "^0.3.1",
@@ -37,6 +38,7 @@
 		"@rentfuse-labs/neo-wallet-adapter-wallets": "^0.3.1",
 		"data-uri-to-buffer": "^4.0.0",
 		"loader-utils": "^3.2.0",
+		"neo3-dapi": "^1.0.1",
 		"next": "^11.1.2",
 		"next-compose-plugins": "^2.2.1",
 		"react": "^17.0.2",
