@@ -15,15 +15,15 @@ import Head from "next/head";
 import Image from "next/image";
 import Neon from "@cityofzion/neon-js";
 import { useState, useCallback, useEffect } from "react";
-import neo3Dapi from 'neo3-dapi';
+import neo3Dapi from "neo3-dapi";
 
 const Index: NextPage = () => {
   const NeoContractHash = "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5";
   const BettingManagerContractHash =
     "0x7a06e40cd08c0a8877c2d6d0a4974f7dbe9b2b7b";
 
-	const brian = "NYKNWWmArjHD7uXFpuGeDH6ucYGpsf2s6Y"
-	
+  const brian = "NYKNWWmArjHD7uXFpuGeDH6ucYGpsf2s6Y";
+
   // @ts-ignore
   const publishInvoke = async (
     rpcAddress,
@@ -75,9 +75,7 @@ const Index: NextPage = () => {
   useEffect(() => {
     initDap();
 
-// balances 
-
-
+    // balances
 
     if (connected) {
       fetchWalletNetwork();
@@ -94,52 +92,41 @@ const Index: NextPage = () => {
           const { address, publicKey } = publicKeyData;
 
           console.log("Account address: " + address);
-	
+
           console.log("Account public key: " + publicKey);
         });
+        let scrpAddress;
+        neolineN3
+          .ScriptHashToAddress({
+            scriptHash: "0x7a06e40cd08c0a8877c2d6d0a4974f7dbe9b2b7b",
+          })
+          .then((result) => {
+            const { address } = result;
+            scrpAddress = address;
+            console.log("address" + address);
+          })
+          .catch((error) => {
+            const { type, description, data } = error;
+            switch (type) {
+              case "NO_PROVIDER":
+                console.log("No provider available.");
+                break;
+              case "MALFORMED_INPUT":
+                console.log("Please check your input");
+                break;
+              default:
+                // Not an expected error object.  Just write the error to the console.
+                console.error(error);
+                break;
+            }
+          });
 
-		neolineN3.getBalance()
-		.then((results) => {
-			Object.keys(results).forEach(address => {
-				const balances = results[address];
-				balances.forEach(balance => {
-					const { contract, symbol, amount } = balance
-		
-					console.log('Address: ' + address);
-					console.log('contract: ' + contract);
-					console.log('Asset symbol: ' + symbol);
-					console.log('Amount: ' + amount);
-				});
-			});
-		})
-
-
-		// send gas token
-		
-		// neolineN3.send({
-		// 	fromAddress: address,
-		// 	toAddress: brian,
-		// 	asset: 'GAS',
-		// 	amount: '1',
-		// 	fee: '0.0001',
-		// 	broadcastOverride: false
-		// })
-		// .then(result => {
-		// 	console.log('Send transaction success!');
-		// 	console.log('Transaction ID: ' + result.txid);
-		// 	console.log('RPC node URL: ' + result.nodeURL);
-		// })
-
-		
+        // send gas token
       }
-
- 
     } else {
       setWalletNetwork(null);
     }
   }, [connected, fetchWalletNetwork]);
-
-
 
   const onClick = useCallback(async () => {
     if (!address || !connected) throw new WalletNotConnectedError();
@@ -181,30 +168,26 @@ const Index: NextPage = () => {
   }, [address, connected, invoke]);
 
   const placeBet = async () => {
-    const rpcAddress = "https://testnet1.neo.coz.io:443";
-    const networkMagic = 877933390;
-    const params = [
-      sc.ContractParam.hash160("NT4QtUYLghvSuuB2yCS6CgQk9Nf1nkDk2q"),
-      sc.ContractParam.hash160(BettingManagerContractHash),
-      2,
-      { amount: 1 },
-    ];
-    await publishInvoke(
-      rpcAddress,
-      networkMagic,
-      NeoContractHash,
-      "transfer",
-      params,
-      account
-    );
+    neolineN3
+      .send({
+        fromAddress: address,
+        toAddress: brian,
+        asset: "NEO",
+        amount: "1",
+        fee: "0.0001",
+        broadcastOverride: false,
+      })
+      .then((result) => {
+        console.log("Send transaction success!");
+        console.log("Transaction ID: " + result.txid);
+        console.log("RPC node URL: " + result.nodeURL);
+      });
   };
 
-
   const initDap = async () => {
- 
     const initN3Dapi = new Promise((resolve, reject) => {
       window.addEventListener("NEOLine.N3.EVENT.READY", () => {
-		setNeoLine3(new NEOLineN3.Init());
+        setNeoLine3(new NEOLineN3.Init());
         if (neolineN3) {
           resolve(neolineN3);
         } else {
@@ -224,7 +207,7 @@ const Index: NextPage = () => {
       });
     });
 
-	initCommonDapi 
+    initCommonDapi
       .then(() => {
         console.log("The common dAPI method is loaded.");
         return initN3Dapi;
@@ -235,7 +218,7 @@ const Index: NextPage = () => {
       .catch((err) => {
         console.log(err);
       });
-  }
+  };
 
   return (
     <>
@@ -244,22 +227,24 @@ const Index: NextPage = () => {
       </Head>
       <nav className="relative container mx-auto p-2 ">
         <div className="flex items-center justify-between">
-          <div className="pt-2 py-6 flex flex-row justify-between items-center ">
-            <img src="img/LOGO.png" height="100" width="100" alt="" />
-            <h1 className="lg:text-5xl md:text-5xl text-white font-bold  ">
-              Planet X
-            </h1>
-          </div>
+          <a href="/">
+            <div className="pt-2 py-6 flex flex-row justify-between items-center ">
+              <img src="img/LOGO.png" height="100" width="100" alt="" />
+              <h1 className="lg:text-5xl md:text-5xl text-white font-bold  ">
+                Planet X
+              </h1>
+            </div>
+          </a>
 
           <div className="hidden space-x-6 md:flex">
             <a
-              href="games"
+              href="/games"
               className="hover:text-darkGrayishBlue text-white font-bold"
             >
               Games
             </a>
             <a
-              href="/portfolio.html"
+              href="/portfolio"
               className="hover:text-darkGrayishBlue text-white font-bold"
             >
               Portfolio
