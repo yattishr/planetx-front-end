@@ -1,3 +1,5 @@
+// @ts-nocheck
+
 import { useWallet } from "@rentfuse-labs/neo-wallet-adapter-react";
 import {
   waitTx,

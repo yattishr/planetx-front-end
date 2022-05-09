@@ -1,3 +1,6 @@
+
+// disable eslint-disable-next-line for this file
+// @ts-nocheck
 import { useWallet } from "@rentfuse-labs/neo-wallet-adapter-react";
 import {
   waitTx,
@@ -128,44 +131,6 @@ const Index: NextPage = () => {
     }
   }, [connected, fetchWalletNetwork]);
 
-  const onClick = useCallback(async () => {
-    if (!address || !connected) throw new WalletNotConnectedError();
-    const account = wallet.getScriptHashFromAddress(address);
-    // Construct the request and invoke it
-    // const result = await invoke({
-    // 	scriptHash: '0x7a06e40cd08c0a8877c2d6d0a4974f7dbe9b2b7b',
-    // 	operation: 'getNumber',
-
-    // 	signers: [
-    // 		{
-    // 			account: wallet.getScriptHashFromAddress(address),
-    // 			// @ts-ignore
-    // 			scope: WitnessScope.CalledByEntry,
-    // 		},
-    // 	],
-    // });
-
-    // // Optional: Wait for the transaction to be confirmed onchain
-    // if (result.data?.txId) {
-    // 	await waitTx('NETWORK_RPC_ADDRESS_HERE', result.data?.txId);
-    // }
-
-    const rpcAddress = "https://testnet1.neo.coz.io:443";
-    const networkMagic = 877933390;
-    const params = [
-      sc.ContractParam.hash160("NT4QtUYLghvSuuB2yCS6CgQk9Nf1nkDk2q"),
-      sc.ContractParam.hash160(BettingManagerContractHash),
-      2,
-      { amount: 1 },
-    ];
-    await publishInvoke(
-      rpcAddress,
-      networkMagic,
-      NeoContractHash,
-      "transfer",
-      []
-    );
-  }, [address, connected, invoke]);
 
   const placeBet = async () => {
     neolineN3
