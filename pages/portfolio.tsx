@@ -19,7 +19,7 @@ import Link from "next/link";
 import Neon from "@cityofzion/neon-js";
 import { useState, useCallback, useEffect } from "react";
 import neo3Dapi from 'neo3-dapi';
-import { CurrentBets } from "../components/currentBets";
+
 
 const Index: Portfolio = () => {
   const NeoContractHash = "0xef4073a0f2b305a38ec4050e4d3d28bc40ea63f5";
@@ -156,7 +156,7 @@ const Index: Portfolio = () => {
       </Head>
       <nav className="relative container mx-auto p-2 ">
         <div className="flex items-center justify-between">
-          <a href="/">
+          <Link href="/">
 
           <div  className="pt-2 py-6 flex flex-row justify-between items-center ">
             <img src="img/LOGO.png" height="100" width="100" alt="" />
@@ -164,7 +164,7 @@ const Index: Portfolio = () => {
               Planet X
             </h1>
           </div>
-          </a>
+          </Link>
 
           <div className="hidden space-x-6 md:flex">
           <div className="hover:text-darkGrayishBlue text-white font-bold">

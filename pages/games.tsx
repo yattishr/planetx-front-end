@@ -32,14 +32,14 @@ const Index: NextPage = () => {
       </Head>
       <nav className="relative container mx-auto p-2 ">
         <div className="flex items-center justify-between">
-          <a href="/">
+          <Link href="/">
             <div className="pt-2 py-6 flex flex-row justify-between items-center ">
               <img src="img/LOGO.png" height="100" width="100" alt="" />
               <h1 className="lg:text-5xl md:text-5xl text-white font-bold  ">
                 Planet X
               </h1>
             </div>
-          </a>
+          </Link>
 
           <div className="hidden space-x-6 md:flex">
           <div className="hover:text-darkGrayishBlue text-white font-bold">
