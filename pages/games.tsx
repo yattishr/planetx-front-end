@@ -13,6 +13,7 @@ import { u, sc, wallet } from "@cityofzion/neon-js";
 import { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import Neon from "@cityofzion/neon-js";
 import { useState, useCallback, useEffect } from "react";
 import neo3Dapi from "neo3-dapi";
@@ -41,18 +42,12 @@ const Index: NextPage = () => {
           </a>
 
           <div className="hidden space-x-6 md:flex">
-            <a
-              href="/#"
-              className="hover:text-darkGrayishBlue text-white font-bold"
-            >
-              Games
-            </a>
-            <a
-              href="/portfolio"
-              className="hover:text-darkGrayishBlue text-white font-bold"
-            >
-              Portfolio
-            </a>
+          <div className="hover:text-darkGrayishBlue text-white font-bold">
+              <Link href="/games">Games</Link>
+            </div>
+            <div className="hover:text-darkGrayishBlue text-white font-bold">
+              <Link href="/portfolio">Portfolio</Link>
+            </div>
           </div>
 
           <button
@@ -184,7 +179,7 @@ const Index: NextPage = () => {
                       scope="col"
                       className="text-sm font-bold text-white px-6 py-4 text-left"
                     >
-                      Date 
+                      Date
                     </th>
                     <th
                       scope="col"

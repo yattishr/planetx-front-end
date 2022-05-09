@@ -166,18 +166,12 @@ const Index: Portfolio = () => {
           </a>
 
           <div className="hidden space-x-6 md:flex">
-            <a
-              href="/games"
-              className="hover:text-darkGrayishBlue text-white font-bold"
-            >
-              Games
-            </a>
-            <a
-              href="/#"
-              className="hover:text-darkGrayishBlue text-white font-bold"
-            >
-              Portfolio
-            </a>
+          <div className="hover:text-darkGrayishBlue text-white font-bold">
+              <Link href="/games">Games</Link>
+            </div>
+            <div className="hover:text-darkGrayishBlue text-white font-bold">
+              <Link href="/portfolio">Portfolio</Link>
+            </div>
           </div>
 
           <button
