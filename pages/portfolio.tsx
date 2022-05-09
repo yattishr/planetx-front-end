@@ -15,6 +15,7 @@ import { u, sc, wallet } from "@cityofzion/neon-js";
 import { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import Neon from "@cityofzion/neon-js";
 import { useState, useCallback, useEffect } from "react";
 import neo3Dapi from 'neo3-dapi';

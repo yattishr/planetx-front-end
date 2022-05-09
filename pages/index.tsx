@@ -15,6 +15,7 @@ import { neolineN3 } from "@rentfuse-labs/neo-wallet-adapter-neoline";
 import { u, sc, wallet } from "@cityofzion/neon-js";
 import { NextPage } from "next";
 import Head from "next/head";
+import Link from "next/link";
 import Image from "next/image";
 import Neon from "@cityofzion/neon-js";
 import { useState, useCallback, useEffect } from "react";
