@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 
 // disable eslint-disable-next-line for this file
 // @ts-nocheck
@@ -26,7 +27,7 @@ const Index: NextPage = () => {
   const BettingManagerContractHash =
     "0x7a06e40cd08c0a8877c2d6d0a4974f7dbe9b2b7b";
 
-  const brian = "NYKNWWmArjHD7uXFpuGeDH6ucYGpsf2s6Y";
+  const bettingManagerAddress = "NYKNWWmArjHD7uXFpuGeDH6ucYGpsf2s6Y";
 
   // @ts-ignore
   const publishInvoke = async (
@@ -134,20 +135,22 @@ const Index: NextPage = () => {
 
 
   const placeBet = async () => {
-    neolineN3
-      .send({
-        fromAddress: address,
-        toAddress: brian,
-        asset: "NEO",
-        amount: "1",
-        fee: "0.0001",
-        broadcastOverride: false,
-      })
-      .then((result) => {
-        console.log("Send transaction success!");
-        console.log("Transaction ID: " + result.txid);
-        console.log("RPC node URL: " + result.nodeURL);
-      });
+    // neolineN3
+    //   .send({
+    //     fromAddress: address,
+    //     toAddress: bettingManagerAddress,
+    //     asset: "NEO",
+    //     amount: "1",
+    //     fee: "0.0001",
+    //     broadcastOverride: false,
+    //   })
+    //   .then((result) => {
+    //     console.log("Send transaction success!");
+    //     console.log("Transaction ID: " + result.txid);
+    //     console.log("RPC node URL: " + result.nodeURL);
+    //   });
+
+
   };
 
   const initDap = async () => {
@@ -203,7 +206,7 @@ const Index: NextPage = () => {
           </Link>
 
           <div className="hidden space-x-6 md:flex">
-		  <div className="hover:text-darkGrayishBlue text-white font-bold">
+            <div className="hover:text-darkGrayishBlue text-white font-bold">
               <Link href="/games">Games</Link>
             </div>
             <div className="hover:text-darkGrayishBlue text-white font-bold">
@@ -234,13 +237,14 @@ const Index: NextPage = () => {
         <div className="container flex flex-col-reverse items-center px-6 mx-auto mt-10 space-y-0 md:space-y-0 md:flex-row">
           <div className="">
             <div className="md:w-1/2 flex flex-col space-y-12">
-              <img src="img/LOGO.png" alt="" />
+              <img src="img/LOGO.png" height={800} width={800} alt="" />
             </div>
           </div>
-
           <div className=" md:w-1/2">
             <img src="img/right_image.png" alt="" />
           </div>
+
+
         </div>
       </section>
 
@@ -295,6 +299,12 @@ const Index: NextPage = () => {
                     >
                       24 hours
                     </th>
+                    <th
+                      scope="col"
+                      className="text-sm font-bold text-white px-6 py-4 text-left"
+                    >
+                      Place Bets
+                    </th>
                   </tr>
                 </thead>
                 <tbody className="bg-[#15174A]   ">
@@ -313,10 +323,14 @@ const Index: NextPage = () => {
                     </td>
                     <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
                       400+
-                      {connected ? (
-                        <button onClick={placeBet} className="btn btn-success">
-                          Place Bet{" "}
-                        </button>
+                     
+                    </td>
+
+                    <td>
+                    {connected ? (
+                        <Link href={'/bet'}>
+                        <Image src="/img/placeBet.png" height={48} width={120} alt="" />
+                      </Link>
                       ) : null}
                     </td>
                   </tr>
@@ -336,6 +350,14 @@ const Index: NextPage = () => {
                     <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
                       400+
                     </td>
+                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
+                      {connected ? (
+                       <Link href={'/bet'}>
+                       <Image src="/img/placeBet.png" height={48} width={120} alt="" />
+                     </Link>
+                      ) : null}
+                    </td>
+
                   </tr>
                   <tr className="border-b">
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">
@@ -352,6 +374,13 @@ const Index: NextPage = () => {
                     </td>
                     <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
                       50+
+                    </td>
+                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
+                    {connected ? (
+                        <Link href={'/bet'}>
+                        <Image src="/img/placeBet.png" height={48} width={120} alt="" />
+                      </Link>
+                      ) : null}
                     </td>
                   </tr>
                   <tr className="border-b">
@@ -370,6 +399,16 @@ const Index: NextPage = () => {
                     <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
                       100+
                     </td>
+                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
+                      {connected ? (
+                        // eslint-disable-next-line @next/next/link-passhref
+                        <Link href={'/bet'}>
+                          <Image src="/img/placeBet.png" height={48} width={120} alt="" />
+                        </Link>
+
+
+                      ) : null}
+                    </td>
                   </tr>
                   <tr className="border-b">
                     <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">
@@ -387,6 +426,13 @@ const Index: NextPage = () => {
                     <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
                       25+
                     </td>
+                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
+                    {connected ? (
+                        <Link href={'/bet'}>
+                        <Image src="/img/placeBet.png" height={48} width={120} alt="" />
+                      </Link>
+                      ) : null}
+                    </td>
                   </tr>
                 </tbody>
               </table>
@@ -400,6 +446,13 @@ const Index: NextPage = () => {
           padding: 0 2rem;
         }
 
+.placeBet {
+  position: absolute;
+width: 140px;
+height: 42px;
+left: 1182px;
+top: 1847px;
+}
         .main {
           min-height: 100vh;
           padding: 4rem 0;

@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/link-passhref */
 import { useWallet } from "@rentfuse-labs/neo-wallet-adapter-react";
 import {
   waitTx,
@@ -42,7 +43,7 @@ const Index: NextPage = () => {
           </Link>
 
           <div className="hidden space-x-6 md:flex">
-          <div className="hover:text-darkGrayishBlue text-white font-bold">
+            <div className="hover:text-darkGrayishBlue text-white font-bold">
               <Link href="/games">Games</Link>
             </div>
             <div className="hover:text-darkGrayishBlue text-white font-bold">
@@ -69,89 +70,25 @@ const Index: NextPage = () => {
       </nav>
 
       <section>
-        <div className="container  flex flex-col items-center justify-center px-6 mx-auto mt-2  md:space-y-0 ">
+        <div className="container  flex flex-col items-center justify-center px-6 mx-auto mt-4 space-y-2  md:space-y-1 ">
           <p className="text-white -rotate-12 text-5xl py-6"> Games </p>
 
-          <div className="flex flex-row justify-between gap-2 overflow-x-auto">
-            <Link href={'bet'}>
-            
-            
-            <div className="rounded-lg shadow-lg bg-[#8984CA]   max-w-sm min-h-fit">
-              <div className="p-6 rounded rounded-lg    ">
-                <div className="rounded-lg shadow-lg  bg-white  bg-[#8A86C4] rounded  max-w-sm">
-                  <img
-                    src="img/csgo-icon-42845 1.png"
-                    className="rounded p-2"
-                    height="100"
-                    width="100"
-                    alt=""
-                  />
-                </div>
-                <div className="bg-[#2B229F] flex justify-center">
-                  <p className="text-[#C829DD] text-2xl font-bold self-center">
-                    CS:GO
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="flex flex-row justify-around overflow-x-auto">
+
+            <Link href={'/bet'}>
+              <Image src="/img/csgo.png" height={240} width={200} alt="" />
+            </Link>
+            <Link href={'/bet'}>
+              <Image src="/img/DOTAa.png" height={200} width={240} alt="" />
+            </Link>
+            <Link href={'/bet'}>
+              <Image src="/img/kog.png" height={200} width={180} alt="" />
+            </Link>
+            <Link href={'/bet'}>
+              <Image src="/img/legendss.png" height={200} width={200} alt="" />
             </Link>
 
-            <div className="rounded-lg shadow-lg bg-[#8984CA]   max-w-sm min-h-fit">
-              <div className="p-6 rounded rounded-lg    ">
-                <div className="rounded-lg shadow-lg  bg-white  bg-[#8A86C4] rounded  max-w-sm">
-                  <img
-                    src="img/pngwing 1.png"
-                    className="rounded p-2"
-                    height="100"
-                    width="100"
-                    alt=""
-                  />
-                </div>
-                <div className="bg-[#2B229F] flex justify-center">
-                  <p className="text-[#C829DD] text-2xl font-bold self-center">
-                    LOL
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            <div className="rounded-lg shadow-lg bg-[#8984CA]   max-w-sm min-h-fit">
-              <div className="p-6 rounded rounded-lg    ">
-                <div className="rounded-lg shadow-lg  bg-[#8A86C4]  rounded  max-w-sm">
-                  <img
-                    src="img/dota.png"
-                    className="rounded p-2 "
-                    height="100"
-                    width="100"
-                    alt=""
-                  />
-                </div>
-                <div className="bg-[#2B229F] flex justify-center">
-                  <p className="text-[#C829DD] text-2xl font-bold self-center">
-                    DOTA 2
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div className="rounded-lg shadow-lg bg-[#8984CA]   max-w-sm min-h-fit">
-              <div className="p-6 rounded rounded-lg  ">
-                <div className="rounded-lg shadow-lg  min-h-fit  bg-[#8A86C4]  rounded  max-w-sm">
-                  <img
-                    src="img/KCC-2021_logo 1.png"
-                    className="rounded p-2"
-                    height="100"
-                    width="100"
-                    alt=""
-                  />
-                </div>
-                <div className="bg-[#2B229F] flex justify-center">
-                  <p className="text-[#C829DD] text-2xl font-bold self-center">
-                    KOG
-                  </p>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

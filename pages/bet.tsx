@@ -25,7 +25,7 @@ const Index: Bet = () => {
   const BettingManagerContractHash =
     "0x7a06e40cd08c0a8877c2d6d0a4974f7dbe9b2b7b";
 
-  const brian = "NYKNWWmArjHD7uXFpuGeDH6ucYGpsf2s6Y";
+  const tresuary = "NYKNWWmArjHD7uXFpuGeDH6ucYGpsf2s6Y";
 
   // @ts-ignore
   const publishInvoke = async (
@@ -74,11 +74,32 @@ const Index: Bet = () => {
       console.error(error);
     }
   }, [getNetworks]);
-
+    // balances
+    const placeBet = async () => {
+      
+      if(connected) {
+        neolineN3
+        .send({
+          fromAddress: address,
+          toAddress: tresuary,
+          asset: "GAS",
+          amount: "1",
+          fee: "0.0001",
+          broadcastOverride: false,
+        })
+        .then((result) => {
+          console.log("Send transaction success!");
+          console.log("Transaction ID: " + result.txid);
+          console.log("RPC node URL: " + result.nodeURL);
+        });
+      }
+    
+  
+  
+    };
   useEffect(() => {
     initDap();
 
-    // balances
 
     if (connected) {
       fetchWalletNetwork();
@@ -187,19 +208,23 @@ const Index: Bet = () => {
       <section id="hero" className="p-6">
         <div className="betxlogo "></div>
         <div className="flex flex-col p-2 BetArea  box-border  ">
-          <div className="flex flex-row p-6 justify-between justify-self-start ">
-            <div className="flex  gameDetailsCard" >
-
-            </div>
-            <div className="right">
-                <Image src="/img/right.png" width="300px" height="350px" />
-            </div>
+          <div className="flex flex-row p-6 justify-around justify-self-start ">
+            <Image src="/img/betGO.png" width="300" height="200" />
+         
+              <Image src="/img/right.png" width="300px" height="350px" />
+           
           </div>
-          <div className="  flex flex-col betBox ">
+          <div className=" flex flex-col items-center justify-between betBox ">
             <p className="text-white text-2xl font-bold ">Place Bet</p>
-            <button className="betButton justify-self-auto text-white text-2xl font-bold ">
+            <button onClick={placeBet} className="betButton justify-self-auto text-white text-2xl font-bold ">
               Bet X
             </button>
+
+            <WalletMultiButton
+            style={{
+              backgroundColor: "#DC2984",
+            }}
+          />
           </div>
         </div>
         <div className="timer"></div>
@@ -246,16 +271,15 @@ const Index: Bet = () => {
           position: absolute;
           width: 107px;
           height: 119px;
-          left: 1205px;
+          left: 1950px;
           top: 435px;
-
           background: url(/img/timer.png) no-repeat;
         }
         .betxlogo {
           position: absolute;
           width: 243.15px;
           height: 68.24px;
-          left: 595px;
+          left: 700px;
           top: 409.08px;
 
           background: url(/img/betxlogo.png) no-repeat;
