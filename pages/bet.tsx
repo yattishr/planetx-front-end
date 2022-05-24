@@ -93,37 +93,64 @@ const Index: Bet = () => {
           console.log("RPC node URL: " + result.nodeURL);
         });
       }
-    
   
   
     };
-  useEffect(() => {
-    initDap();
-
-
-    if (connected) {
-      fetchWalletNetwork();
-      console.log("Account => ", neolineN3);
-
-      if (neolineN3) {
-        neolineN3.getAccount().then((account) => {
-          console.log("Account found conneted => ", account);
-
-          setAccount(account);
-        });
-
-        neolineN3.getPublicKey().then((publicKeyData) => {
-          const { address, publicKey } = publicKeyData;
-
-          console.log("Account address: " + address);
-
-          console.log("Account public key: " + publicKey);
-        });
+    useEffect(() => {
+      initDap();
+  
+      // balances
+  
+      if (connected) {
+        fetchWalletNetwork();
+        console.log("Account => ", neolineN3);
+  
+        if (neolineN3) {
+          neolineN3.getAccount().then((account) => {
+            console.log("Account found conneted => ", account);
+  
+            setAccount(account);
+          });
+  
+          neolineN3.getPublicKey().then((publicKeyData) => {
+            const { address, publicKey } = publicKeyData;
+  
+            console.log("Account address: " + address);
+  
+            console.log("Account public key: " + publicKey);
+          });
+          let scrpAddress;
+          neolineN3
+            .ScriptHashToAddress({
+              scriptHash: "0x7a06e40cd08c0a8877c2d6d0a4974f7dbe9b2b7b",
+            })
+            .then((result) => {
+              const { address } = result;
+              scrpAddress = address;
+              console.log("address" + address);
+            })
+            .catch((error) => {
+              const { type, description, data } = error;
+              switch (type) {
+                case "NO_PROVIDER":
+                  console.log("No provider available.");
+                  break;
+                case "MALFORMED_INPUT":
+                  console.log("Please check your input");
+                  break;
+                default:
+                  // Not an expected error object.  Just write the error to the console.
+                  console.error(error);
+                  break;
+              }
+            });
+  
+          // send gas token
+        }
+      } else {
+        setWalletNetwork(null);
       }
-    } else {
-      setWalletNetwork(null);
-    }
-  }, [connected, fetchWalletNetwork]);
+    }, [connected, fetchWalletNetwork]);
 
   const initDap = async () => {
     const initN3Dapi = new Promise((resolve, reject) => {
