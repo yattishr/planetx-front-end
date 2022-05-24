@@ -18,6 +18,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Neon from "@cityofzion/neon-js";
 import { useState, useCallback, useEffect } from "react";
+
 import neo3Dapi from "neo3-dapi";
 
 const Index: Bet = () => {
@@ -62,8 +63,9 @@ const Index: Bet = () => {
   const [walletNetwork, setWalletNetwork] = useState<string | null>(null);
   const [state, setState] = useState(0);
   const [neoline, setNeoLine] = useState();
-  const [neolineN3, setNeoLine3] = useState();
   const [blockHeight, setBlockHeight] = useState("78115");
+  const [neolineN3, setNeoLine3] = useState();
+
   const fetchWalletNetwork = useCallback(async () => {
     try {
       const result = await getNetworks();
@@ -74,11 +76,12 @@ const Index: Bet = () => {
       console.error(error);
     }
   }, [getNetworks]);
-    // balances
-    const placeBet = async () => {
-      
-      if(connected) {
-        neolineN3
+  // balances
+
+  const placeBet = async () => {
+
+    if (connected) {
+      neolineN3
         .send({
           fromAddress: address,
           toAddress: tresuary,
@@ -89,68 +92,75 @@ const Index: Bet = () => {
         })
         .then((result) => {
           console.log("Send transaction success!");
+          // eslint-disable-next-line react-hooks/rules-of-hooks
+          alert('Bet Placed successfully!')
           console.log("Transaction ID: " + result.txid);
           console.log("RPC node URL: " + result.nodeURL);
-        });
-      }
-  
-  
-    };
-    useEffect(() => {
-      initDap();
-  
-      // balances
-  
-      if (connected) {
-        fetchWalletNetwork();
-        console.log("Account => ", neolineN3);
-  
-        if (neolineN3) {
-          neolineN3.getAccount().then((account) => {
-            console.log("Account found conneted => ", account);
-  
-            setAccount(account);
-          });
-  
-          neolineN3.getPublicKey().then((publicKeyData) => {
-            const { address, publicKey } = publicKeyData;
-  
-            console.log("Account address: " + address);
-  
-            console.log("Account public key: " + publicKey);
-          });
-          let scrpAddress;
-          neolineN3
-            .ScriptHashToAddress({
-              scriptHash: "0x7a06e40cd08c0a8877c2d6d0a4974f7dbe9b2b7b",
-            })
-            .then((result) => {
-              const { address } = result;
-              scrpAddress = address;
-              console.log("address" + address);
-            })
-            .catch((error) => {
-              const { type, description, data } = error;
-              switch (type) {
-                case "NO_PROVIDER":
-                  console.log("No provider available.");
-                  break;
-                case "MALFORMED_INPUT":
-                  console.log("Please check your input");
-                  break;
-                default:
-                  // Not an expected error object.  Just write the error to the console.
-                  console.error(error);
-                  break;
-              }
-            });
-  
-          // send gas token
+        }).catch((err) => {
+
+          alert("You do no have enough AstroToken to launch!")
         }
-      } else {
-        setWalletNetwork(null);
+        );
+    }
+
+
+  };
+  useEffect(() => {
+    initDap();
+    // eslint-disable-next-line react-hooks/rules-of-hooks
+
+    // balances
+
+    if (connected) {
+      fetchWalletNetwork();
+      console.log("Account => ", neolineN3);
+
+      if (neolineN3) {
+        neolineN3.getAccount().then((account) => {
+          console.log("Account found conneted => ", account);
+
+          setAccount(account);
+        });
+
+        neolineN3.getPublicKey().then((publicKeyData) => {
+          const { address, publicKey } = publicKeyData;
+
+          console.log("Account address: " + address);
+
+          console.log("Account public key: " + publicKey);
+        });
+        let scrpAddress;
+        neolineN3
+          .ScriptHashToAddress({
+            scriptHash: "0x7a06e40cd08c0a8877c2d6d0a4974f7dbe9b2b7b",
+          })
+          .then((result) => {
+            const { address } = result;
+            scrpAddress = address;
+            console.log("address" + address);
+          })
+          .catch((error) => {
+            const { type, description, data } = error;
+            switch (type) {
+              case "NO_PROVIDER":
+                console.log("No provider available.");
+                break;
+              case "MALFORMED_INPUT":
+                console.log("Please check your input");
+                break;
+              default:
+                // Not an expected error object.  Just write the error to the console.
+                console.error(error);
+                break;
+            }
+          });
+
+        // send gas token
       }
-    }, [connected, fetchWalletNetwork]);
+    } else {
+      setWalletNetwork(null);
+    }
+  }, [connected, fetchWalletNetwork]);
 
   const initDap = async () => {
     const initN3Dapi = new Promise((resolve, reject) => {
@@ -237,9 +247,9 @@ const Index: Bet = () => {
         <div className="flex flex-col p-2 BetArea  box-border  ">
           <div className="flex flex-row p-6 justify-around justify-self-start ">
             <Image src="/img/betGO.png" width="300" height="200" />
-         
-              <Image src="/img/right.png" width="300px" height="350px" />
-           
+
+            <Image src="/img/right.png" width="300px" height="350px" />
+
           </div>
           <div className=" flex flex-col items-center justify-between betBox ">
             <p className="text-white text-2xl font-bold ">Place Bet</p>
@@ -248,10 +258,10 @@ const Index: Bet = () => {
             </button>
 
             <WalletMultiButton
-            style={{
-              backgroundColor: "#DC2984",
-            }}
-          />
+              style={{
+                backgroundColor: "#DC2984",
+              }}
+            />
           </div>
         </div>
         <div className="timer"></div>
