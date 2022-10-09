@@ -245,6 +245,8 @@ const Index: NextPage = () => {
           </div>
         </div>
       </section>
+
+      
       <style jsx>{`
         .container {
           padding: 0 2rem;
