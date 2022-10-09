@@ -236,7 +236,7 @@ const Index: NextPage = () => {
       </nav>
 
       <section></section>
-      <section id="hero">
+      <section id="hero" className="flex flex-col">
         <div className= "   container flex flex-row justify-between items-center ">
           <div className="flex flex-col items-center gap-2 ">
 
@@ -259,6 +259,15 @@ const Index: NextPage = () => {
 
 
         </div>
+<div className="flex flex-row items-center justify-center info_box">
+<div className="flex flex-row   ">
+          <div> 
+            <Image src={'/img/logo.png'} width={56} height={56}  alt="logo"/>
+          </div>
+<p className="info">PLANET X is an E-sports crypto betting platfor</p>
+        </div>
+</div>
+    
       </section>
 
    
@@ -518,6 +527,41 @@ color: #FFFFFF;
           display: flex;
           flex-direction: column;
           gap: 2rem;
+        }
+
+
+        .info {
+    flex: display;;    
+height: 57px;
+left: 372px;
+top: 915px;
+align-self: center;
+font-family: 'Trispace';
+font-style: normal;
+font-weight: 800;
+font-size: 24px;
+line-height: 41px;
+
+color: #FFFFFF;
+
+text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.2);
+        }
+
+        .info_box {
+        
+          align-items: center;
+          margin: 4rem;
+          padding-top: 2rem;
+      align-self: center;
+          width: 60%;
+          padding:2rem 2rem 1rem 2rem;
+          height: 96px;
+left: 204px;
+right: 204px;
+top: 900px;
+
+background: #2B229F;
+border-radius: 30px;
         }
       `}</style>
     </>
