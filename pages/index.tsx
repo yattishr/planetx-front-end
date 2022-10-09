@@ -197,20 +197,23 @@ const Index: NextPage = () => {
       <nav className="relative container mx-auto p-2 ">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <div className="pt-2 py-6 flex flex-row justify-between items-center ">
+            <div className="pt-2 py-6 flex gap-4 flex-row justify-between items-center ">
               <img src="img/LOGO.png" height="100" width="100" alt="" />
-              <h1 className="lg:text-5xl md:text-5xl text-white font-bold  ">
+              <h1 className="planet_x_logo ">
                 Planet X
               </h1>
             </div>
           </Link>
 
-          <div className="hidden space-x-6 md:flex">
-            <div className="hover:text-darkGrayishBlue text-white font-bold">
-              <Link href="/games">Games</Link>
+          <div className=" space-x-6 md:flex">
+            <div className="header_text">
+              <Link href="/games">Homepage</Link>
             </div>
-            <div className="hover:text-darkGrayishBlue text-white font-bold">
-              <Link href="/portfolio">Portfolio</Link>
+            <div className="header_text">
+              <Link href="/portfolio" >Roadmap</Link>
+            </div>
+            <div className="connect_button">
+              <p className="text_primary">Connect Wallet</p>
             </div>
           </div>
 
@@ -234,216 +237,36 @@ const Index: NextPage = () => {
 
       <section></section>
       <section id="hero">
-        <div className="container flex flex-col-reverse items-center px-6 mx-auto mt-10 space-y-0 md:space-y-0 md:flex-row">
-          <div className="">
-            <div className="md:w-1/2 flex flex-col space-y-12">
-              <img src="img/LOGO.png" height={800} width={800} alt="" />
+        <div className= "   container flex flex-row justify-between items-center ">
+          <div className="flex flex-col items-center gap-2 ">
+
+<div className="flex flex-col items-start gap-2 ">  
+<p className="text_secondary" >Coming from PLANET X, betting to the moon</p>
+              <p className="description">Build for you from the start. Place bets on E-sports games together, on a simple and distructive platform.</p>
+</div>
+
+             
+              <div className=" flex flex-row connect_wallet_large">
+              <p className="connect_wallet_large_text ">Connect Wallet</p>
+   {/* <Image src={'/img/vector.png'} width={12} height={12}  alt="connect"/> */}
             </div>
+     
+        
           </div>
           <div className=" md:w-1/2">
-            <img src="img/right_image.png" alt="" />
+            <img src="img/basket_ball_illustration.png" alt="" />
           </div>
 
 
         </div>
       </section>
 
-      <section id="features">
-        <div className="container  flex flex-col items-center justify-center px-6 mx-auto mt-2  md:space-y-0 md:flex-row middle">
-          <WalletMultiButton
-            style={{
-              backgroundColor: "#DC2984",
-            }}
-          />
-        </div>
-      </section>
+   
 
-      <section id="testimonials">
-        <div className="max-w-6xl px-5 mx-auto mt-32 text-center">
-          <div className="flex flex-col mt-24 md:flex-row md:space-x-6">
-            <div className="my-16 flex flex-col items-center justify-center min-w-full ">
-              <p className="text-5xl text-white font-bold subpixel-antialiased py-4 tracking-widest">
-                Trending
-              </p>
-
-              <table className="min-w-full border border-slate-800">
-                <thead className="border-b bg-[#B227CA] ">
-                  <tr>
-                    <th
-                      scope="col"
-                      className="text-sm font-bold  text-white px-6 py-4 text-left"
-                    >
-                      Rank
-                    </th>
-                    <th
-                      scope="col"
-                      className="text-sm font-bold  text-white px-6 py-4 text-left"
-                    >
-                      Game
-                    </th>
-                    <th
-                      scope="col"
-                      className="text-sm font-bold text-white px-6 py-4 text-left"
-                    >
-                      Game Names
-                    </th>
-                    <th
-                      scope="col"
-                      className="text-sm font-bold text-white px-6 py-4 text-left"
-                    >
-                      Date/Time
-                    </th>
-                    <th
-                      scope="col"
-                      className="text-sm font-bold text-white px-6 py-4 text-left"
-                    >
-                      24 hours
-                    </th>
-                    <th
-                      scope="col"
-                      className="text-sm font-bold text-white px-6 py-4 text-left"
-                    >
-                      Place Bets
-                    </th>
-                  </tr>
-                </thead>
-                <tbody className="bg-[#15174A]   ">
-                  <tr className="border-b">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">
-                      <img src="img/up.png" alt="" />
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      <img src="img/cs.png" alt="" />
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      CS:GO - PGL Major Antwerp
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      Sep 22, 2022 4:30 PM
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      400+
-                     
-                    </td>
-
-                    <td>
-                    {connected ? (
-                        <Link href={'/bet'}>
-                        <Image src="/img/placeBet.png" height={48} width={120} alt="" />
-                      </Link>
-                      ) : null}
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">
-                      <img src="img/up.png" alt="" />
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      <img src="img/dota.png" alt="" />
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      CS:GO - PGL Major Antwerp
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      Sep 22, 2022 4:30 PM
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      400+
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      {connected ? (
-                       <Link href={'/bet'}>
-                       <Image src="/img/placeBet.png" height={48} width={120} alt="" />
-                     </Link>
-                      ) : null}
-                    </td>
-
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">
-                      <img src="img/down.png" alt="" />
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      <img src="img/freefire.png" alt="" />
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      Free Fire - World Series
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      Oct 15, 2022 4:00 PM
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      50+
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                    {connected ? (
-                        <Link href={'/bet'}>
-                        <Image src="/img/placeBet.png" height={48} width={120} alt="" />
-                      </Link>
-                      ) : null}
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">
-                      <img src="img/down.png" alt="" />
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      <img src="img/honor.png" alt="" />
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      KOG - KPL Spring Playoffs
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      Nov 05, 2022 2:30 AM
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      100+
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      {connected ? (
-                        // eslint-disable-next-line @next/next/link-passhref
-                        <Link href={'/bet'}>
-                          <Image src="/img/placeBet.png" height={48} width={120} alt="" />
-                        </Link>
-
-
-                      ) : null}
-                    </td>
-                  </tr>
-                  <tr className="border-b">
-                    <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-white">
-                      <img src="img/up.png" alt="" />
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      <img src="img/legends.png" alt="" />
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      LOL - EU Masters Spring
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      Sep 22, 2022 4:30 PM
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                      25+
-                    </td>
-                    <td className="text-sm text-white font-light px-6 py-4 whitespace-nowrap">
-                    {connected ? (
-                        <Link href={'/bet'}>
-                        <Image src="/img/placeBet.png" height={48} width={120} alt="" />
-                      </Link>
-                      ) : null}
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
-      </section>
 
       <style jsx>{`
         .container {
-          padding: 0 2rem;
+          padding: 0 5rem;
         }
 
 .placeBet {
@@ -462,49 +285,61 @@ top: 1847px;
           justify-content: center;
           align-items: center;
         }
+      
+.connect_wallet_large {
 
-        .footer {
-          display: flex;
-          flex: 1;
-          padding: 2rem 0;
-          border-top: 1px solid #eaeaea;
-          justify-content: center;
-          align-items: center;
-        }
+flex: display;
+flex-direction: row;
+  item-align: center;
+  justify-content: center;
 
-        .footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          flex-grow: 1;
-        }
+width: 220px;
+height: 50px;
+left: 204px;
+right: 962px;
+top: 400px;
 
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
+background: #C829DD;
+box-shadow: 4px 4px 4px rgba(255, 0, 127, 0.3);
+border-radius: 4px;
+}
 
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
 
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
+.connect_wallet_large_text {
+  height: 40px;
+font-family: 'Trispace';
+font-style: normal;
+font-weight: 600;
+font-size: 20px;
+line-height: 150%;
+/* identical to box height, or 30px */
 
-        .title,
+display: flex;
+align-items: center;
+text-align: center;
+letter-spacing: 0.06em;
+
+color: #FFFFFF;
+}
         .description {
-          text-align: center;
-        }
+          padding: 3rem 0 3rem 0;
+          width: 418px;
+height: 72px;
+left: 136px;
+top: 573px;
 
-        .description {
-          margin: 4rem 0;
-          line-height: 1.5;
-          font-size: 1.5rem;
+font-family: 'Trispace';
+font-style: normal;
+font-weight: 300;
+font-size: 16px;
+line-height: 150%;
+/* or 24px */
+
+display: flex;
+align-items: center;
+letter-spacing: 0.06em;
+
+color: #FFFFFF;
         }
 
         .code {
@@ -553,7 +388,119 @@ top: 1847px;
           font-size: 1.25rem;
           line-height: 1.5;
         }
+.planet_x_logo {
 
+width: 246px;
+height: 57px;
+left: 223px;
+top: 70px;
+
+font-family: 'Trispace';
+font-style: normal;
+font-weight: 800;
+font-size: 50px;
+line-height: 57px;
+/* identical to box height */
+
+
+color: #FFFFFF;
+
+text-shadow: 2px 2px 6px rgba(200, 41, 221, 0.6);
+}
+.connect_wallet_large_icon {
+  position: absolute;
+width: 24px;
+height: 24px;
+left: 204px;
+top: 408px;
+background: url('/img/vector.png');
+}
+.text_primary { 
+  width: 160px;
+  height: 24px;
+  
+  /* df l */
+  
+  font-family: 'Trispace';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  /* identical to box height, or 24px */
+  
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.06em;
+  
+  color: #FFFFFF;
+  
+  
+  /* Inside auto layout */
+  
+  flex: none;
+  order: 1;
+  flex-grow: 0;
+}
+
+.text_secondary  {
+
+width: 600px;
+height: 69px;
+left: 136px;
+top: 481px;
+
+font-family: 'Trispace';
+font-style: normal;
+font-weight: 700;
+font-size: 32px;
+line-height: 36px;
+letter-spacing: 0.13em;
+
+color: #FFFFFF;
+}
+.header_text { 
+  width: 109px;
+height: 23px;
+left: 892px;
+top: 90px;
+
+font-family: 'Trispace';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 23px;
+/* identical to box height */
+
+text-decoration-line: underline;
+
+color: #FFFFFF;
+}
+
+.header_text:hover {
+  text-decoration-line: none;
+}
+
+.connect_button {
+
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  gap: 8px;
+  
+  width: 199px;
+  height: 40px;
+  
+  background: #C829DD;
+  border-radius: 4px;
+  
+  /* Inside auto layout */
+  
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
         .logo {
           height: 1em;
           margin-left: 0.5rem;
