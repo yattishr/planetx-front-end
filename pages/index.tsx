@@ -233,7 +233,7 @@ const Index: NextPage = () => {
             className="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
           ></div>
         </div>
-      </nav>
+      </nav> 
 
       <section></section>
       <section id="hero" className="flex flex-col">
@@ -259,13 +259,76 @@ const Index: NextPage = () => {
 
 
         </div>
-<div className="flex flex-row items-center justify-center info_box">
+<div className="flex flex-row items-center justify-center info_box   ">
 <div className="flex flex-row   ">
           <div> 
-            <Image src={'/img/logo.png'} width={56} height={56}  alt="logo"/>
+            <Image src={'/img/logo.png'} width={64} height={64}  alt="logo"/>
           </div>
-<p className="info">PLANET X is an E-sports crypto betting platfor</p>
+<p className="info">PLANET X is an E-sports crypto betting platform</p>
         </div>
+</div>
+
+
+<div  className="flex flex-row gap-2 justify-center">
+
+  <div className="  flex flex-col justify-between items-center">
+  <div className=" flex flex-col can_do_box justify-center items-center p-2">
+
+<div className="flex flex-row gap-2 justify-center items-center">
+<Image src={"/img/star.png"} width={112} height={112} alt="" />
+<div className="flex flex-col justify-between">
+  <p className="description_box">
+  Bet on E-Sports Matches
+  </p>
+  <p className="description_box">
+  Gain winnings to go to the moon
+  </p>
+</div>
+</div>
+
+
+  </div>
+
+  <div className=" flex flex-col can_do_box justify-center items-center p-2">
+
+<div className="flex flex-row gap-2 justify-center items-center">
+<Image src={"/img/star.png"} width={112} height={112} alt="" />
+<div className="flex flex-col justify-between">
+  <p className="description_box">
+  Be part of the platform by governance
+  </p>
+  <p className="description_box flex-wrap">
+  Let your portfolio grow even when you are not betting 
+  </p>
+</div>
+</div>
+
+
+  </div>
+
+  </div>
+  
+
+<div className="flex flex-col">
+<div className=" flex flex-col  can_do_box justify-center items-center p-2">
+
+<div className="flex flex-row   gap-2   justify-between items-center p-2 ">
+<Image src={"/img/star.png"} width={112} height={112}   alt="sd"/>
+<div className="flex flex-col ">
+  <p className="description_box">
+  Bet on E-Sports Matches
+  </p>
+  <p className="description_box">
+  Gain winnings to go to the moon
+  </p>
+</div>
+</div>
+  </div>
+</div>
+
+
+  
+
 </div>
     
       </section>
@@ -274,6 +337,43 @@ const Index: NextPage = () => {
 
 
       <style jsx>{`
+
+
+.can_do_box {
+
+  width: 570px;
+  height: 254px;
+  left: 116px;
+  top: 1369px;
+  
+  background: linear-gradient(127.41deg, rgba(218, 37, 226, 0.8) 14.83%, rgba(87, 24, 243, 0.8) 110.24%, rgba(255, 245, 238, 0.8) 110.24%);
+  backdrop-filter: blur(2px);
+  /* Note: backdrop-filter has minimal browser support */
+  
+  border-radius: 14px;
+
+}
+
+
+.description_box { 
+
+  font-family: 'DM Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 150%;
+  /* identical to box height, or 36px */
+  
+  display: flex;
+  align-items: center;
+  
+  color: #FFFFFF;
+}
+
+
+
+
+
         .container {
           padding: 0 5rem;
         }
