@@ -133,7 +133,6 @@ const Index: NextPage = () => {
     }
   }, [connected, fetchWalletNetwork]);
 
-
   const placeBet = async () => {
     // neolineN3
     //   .send({
@@ -149,8 +148,6 @@ const Index: NextPage = () => {
     //     console.log("Transaction ID: " + result.txid);
     //     console.log("RPC node URL: " + result.nodeURL);
     //   });
-
-
   };
 
   const initDap = async () => {
@@ -199,9 +196,7 @@ const Index: NextPage = () => {
           <Link href="/">
             <div className="pt-2 py-6 flex gap-4 flex-row justify-between items-center ">
               <img src="img/LOGO.png" height="100" width="100" alt="" />
-              <h1 className="planet_x_logo ">
-                Planet X
-              </h1>
+              <h1 className="planet_x_logo ">Planet X</h1>
             </div>
           </Link>
 
@@ -210,7 +205,7 @@ const Index: NextPage = () => {
               <Link href="/games">Homepage</Link>
             </div>
             <div className="header_text">
-              <Link href="/portfolio" >Roadmap</Link>
+              <Link href="/portfolio">Roadmap</Link>
             </div>
             <div className="connect_button">
               <p className="text_primary">Connect Wallet</p>
@@ -233,158 +228,211 @@ const Index: NextPage = () => {
             className="absolute flex-col items-center hidden self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md"
           ></div>
         </div>
-      </nav> 
+      </nav>
 
       <section></section>
       <section id="hero" className="flex flex-col">
-        <div className= "   container flex flex-row justify-between items-center ">
+        <div className="   container flex flex-row justify-between items-center ">
           <div className="flex flex-col items-center gap-2 ">
-
-<div className="flex flex-col items-start gap-2 ">  
-<p className="text_secondary" >Coming from PLANET X, betting to the moon</p>
-              <p className="description">Build for you from the start. Place bets on E-sports games together, on a simple and distructive platform.</p>
-</div>
-
-             
-              <div className=" flex flex-row connect_wallet_large">
-              <p className="connect_wallet_large_text ">Connect Wallet</p>
-   {/* <Image src={'/img/vector.png'} width={12} height={12}  alt="connect"/> */}
+            <div className="flex flex-col items-start gap-2 ">
+              <p className="text_secondary">
+                Coming from PLANET X, betting to the moon
+              </p>
+              <p className="description">
+                Build for you from the start. Place bets on E-sports games
+                together, on a simple and distructive platform.
+              </p>
             </div>
-     
-        
+
+            <div className=" flex flex-row connect_wallet_large">
+              <p className="connect_wallet_large_text ">Connect Wallet</p>
+              {/* <Image src={'/img/vector.png'} width={12} height={12}  alt="connect"/> */}
+            </div>
           </div>
           <div className=" md:w-1/2">
             <img src="img/basket_ball_illustration.png" alt="" />
           </div>
-
-
         </div>
-<div className="flex flex-row items-center justify-center info_box   ">
-<div className="flex flex-row   ">
-          <div> 
-            <Image src={'/img/logo.png'} width={64} height={64}  alt="logo"/>
+        <div className="flex flex-row items-center justify-center info_box   ">
+          <div className="flex flex-row   ">
+            <div>
+              <Image src={"/img/logo.png"} width={64} height={64} alt="logo" />
+            </div>
+            <p className="info">
+              PLANET X is an E-sports crypto betting platform
+            </p>
           </div>
-<p className="info">PLANET X is an E-sports crypto betting platform</p>
         </div>
-</div>
 
+        <div className="flex flex-col items-center p-6 w-1/2">
+          <p className="what_can whitespace-nowrap p-3">What you can do?</p>
+        </div>
 
-<div  className="flex flex-row gap-2 justify-center">
+        <div className="why_us flex flex-row gap-2 justify-center">
+          <div className="  flex flex-col justify-between items-center">
+            <div className=" flex flex-col can_do_box justify-center items-center p-2">
+              <div className="flex flex-row gap-2 justify-center items-center">
+                <Image src={"/img/star.png"} width={112} height={112} alt="" />
+                <div className="flex flex-col justify-between">
+                  <p className="description_box">Bet on E-Sports Matches</p>
+                  <p className="description_box">
+                    Gain winnings to go to the moon
+                  </p>
+                </div>
+              </div>
+            </div>
 
-  <div className="  flex flex-col justify-between items-center">
-  <div className=" flex flex-col can_do_box justify-center items-center p-2">
+            <div className=" flex flex-col can_do_box justify-center items-center p-2">
+              <div className="flex flex-row gap-2 justify-center items-center">
+                <Image src={"/img/star.png"} width={112} height={112} alt="" />
+                <div className="flex flex-col justify-between">
+                  <p className="description_box">
+                    Be part of the platform by governance
+                  </p>
+                  <p className="description_box flex-wrap">
+                    Let your portfolio grow even when you are not betting
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
 
-<div className="flex flex-row gap-2 justify-center items-center">
-<Image src={"/img/star.png"} width={112} height={112} alt="" />
-<div className="flex flex-col justify-between">
-  <p className="description_box">
-  Bet on E-Sports Matches
-  </p>
-  <p className="description_box">
-  Gain winnings to go to the moon
-  </p>
-</div>
-</div>
+          <div className="flex flex-col justify-center items-end">
+            <div className=" flex flex-col  can_do_box  p-2">
+              <div className="flex flex-row   gap-2   justify-between items-center p-2 ">
+                <Image
+                  src={"/img/star.png"}
+                  width={112}
+                  height={112}
+                  alt="sd"
+                />
+                <div className="flex flex-col ">
+                  <p className="description_box">Bet on E-Sports Matches</p>
+                  <p className="description_box">
+                    Gain winnings to go to the moon
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-
-  </div>
-
-  <div className=" flex flex-col can_do_box justify-center items-center p-2">
-
-<div className="flex flex-row gap-2 justify-center items-center">
-<Image src={"/img/star.png"} width={112} height={112} alt="" />
-<div className="flex flex-col justify-between">
-  <p className="description_box">
-  Be part of the platform by governance
-  </p>
-  <p className="description_box flex-wrap">
-  Let your portfolio grow even when you are not betting 
-  </p>
-</div>
-</div>
-
-
-  </div>
-
-  </div>
-  
-
-<div className="flex flex-col">
-<div className=" flex flex-col  can_do_box justify-center items-center p-2">
-
-<div className="flex flex-row   gap-2   justify-between items-center p-2 ">
-<Image src={"/img/star.png"} width={112} height={112}   alt="sd"/>
-<div className="flex flex-col ">
-  <p className="description_box">
-  Bet on E-Sports Matches
-  </p>
-  <p className="description_box">
-  Gain winnings to go to the moon
-  </p>
-</div>
-</div>
-  </div>
-</div>
-
-
-  
-
-</div>
-    
+        <div className="flex flex-col justify-center items-center p-6 w-1/2">
+          <p className="what_can whitespace-nowrap p-3 justify-center">
+            Why only us?
+          </p>
+        </div>
       </section>
 
-   
+      <section>
+        <div className=" flex flex-row  ">
+          <div className="side_illustration ">
+sadda
+          </div>
+          <div className="flex flex-col">
 
+          {/* Only us card  */}
+            <div className="flex px-4 flex-row gap-2 items-start only_us_card ">
+              <div className="flex items-center ">
+                <Image src={"/img/chip.png"} width={100} height={100} alt="" />
+              </div>
+              <div className="flex flex-col items-start justify-center">
+                <p className=" text_secondary "> Crypto First </p>
+                <p className="text_primary ">
+                  and foremost, we are built on web 3.0.
+                </p>
+              </div>
+            </div>
+            {/* Only us card end */}
+          </div>
+        </div>
+      </section>
 
       <style jsx>{`
+ .side_illustration {
+  position: absolute;
+width: 1032px;
+height: 842px;
+left: -867px;
+top: 2429px;
 
+background: #C829DD;
+border-radius: 50px;
+ }
+        .only_us_card {
+        
+          height: 150px;
 
-.can_do_box {
+        
+          background: rgba(43, 34, 159, 0.8);
+          border-radius: 25px;
+        }
+        .can_do_box {
+          width: 570px;
+          height: 254px;
+          left: 116px;
+          top: 1369px;
 
-  width: 570px;
-  height: 254px;
-  left: 116px;
-  top: 1369px;
-  
-  background: linear-gradient(127.41deg, rgba(218, 37, 226, 0.8) 14.83%, rgba(87, 24, 243, 0.8) 110.24%, rgba(255, 245, 238, 0.8) 110.24%);
-  backdrop-filter: blur(2px);
-  /* Note: backdrop-filter has minimal browser support */
-  
-  border-radius: 14px;
+          background: linear-gradient(
+            127.41deg,
+            rgba(218, 37, 226, 0.8) 14.83%,
+            rgba(87, 24, 243, 0.8) 110.24%,
+            rgba(255, 245, 238, 0.8) 110.24%
+          );
+          backdrop-filter: blur(2px);
+          /* Note: backdrop-filter has minimal browser support */
 
-}
+          border-radius: 14px;
+        }
 
+        .description_box {
+          font-family: "DM Sans";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 150%;
+          /* identical to box height, or 36px */
 
-.description_box { 
+          display: flex;
+          align-items: center;
 
-  font-family: 'DM Sans';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 20px;
-  line-height: 150%;
-  /* identical to box height, or 36px */
-  
-  display: flex;
-  align-items: center;
-  
-  color: #FFFFFF;
-}
+          color: #ffffff;
+        }
+        .what_can {
+          width: 781px;
+          height: 68px;
+          left: 329px;
+          top: 1204px;
 
+          font-family: "Trispace";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 64px;
+          line-height: 72px;
+          letter-spacing: 0.13em;
 
-
-
+          color: #ffffff;
+        }
 
         .container {
           padding: 0 5rem;
         }
+        .why_us {
+          width: 1440px;
+          height: 1024px;
+          left: 0px;
+          top: 1257px;
 
-.placeBet {
-  position: absolute;
-width: 140px;
-height: 42px;
-left: 1182px;
-top: 1847px;
-}
+          background: url(backgr.jpg);
+        }
+
+        .placeBet {
+          position: absolute;
+          width: 140px;
+          height: 42px;
+          left: 1182px;
+          top: 1847px;
+        }
         .main {
           min-height: 100vh;
           padding: 4rem 0;
@@ -394,61 +442,59 @@ top: 1847px;
           justify-content: center;
           align-items: center;
         }
-      
-.connect_wallet_large {
 
-flex: display;
-flex-direction: row;
-  item-align: center;
-  justify-content: center;
+        .connect_wallet_large {
+          flex: display;
+          flex-direction: row;
+          item-align: center;
+          justify-content: center;
 
-width: 220px;
-height: 50px;
-left: 204px;
-right: 962px;
-top: 400px;
+          width: 220px;
+          height: 50px;
+          left: 204px;
+          right: 962px;
+          top: 400px;
 
-background: #C829DD;
-box-shadow: 4px 4px 4px rgba(255, 0, 127, 0.3);
-border-radius: 4px;
-}
+          background: #c829dd;
+          box-shadow: 4px 4px 4px rgba(255, 0, 127, 0.3);
+          border-radius: 4px;
+        }
 
+        .connect_wallet_large_text {
+          height: 40px;
+          font-family: "Trispace";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 20px;
+          line-height: 150%;
+          /* identical to box height, or 30px */
 
-.connect_wallet_large_text {
-  height: 40px;
-font-family: 'Trispace';
-font-style: normal;
-font-weight: 600;
-font-size: 20px;
-line-height: 150%;
-/* identical to box height, or 30px */
+          display: flex;
+          align-items: center;
+          text-align: center;
+          letter-spacing: 0.06em;
 
-display: flex;
-align-items: center;
-text-align: center;
-letter-spacing: 0.06em;
-
-color: #FFFFFF;
-}
+          color: #ffffff;
+        }
         .description {
           padding: 3rem 0 3rem 0;
           width: 418px;
-height: 72px;
-left: 136px;
-top: 573px;
+          height: 72px;
+          left: 136px;
+          top: 573px;
 
-font-family: 'Trispace';
-font-style: normal;
-font-weight: 300;
-font-size: 16px;
-line-height: 150%;
-/* or 24px */
+          font-family: "Trispace";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 150%;
+          /* or 24px */
 
-display: flex;
-align-items: center;
-letter-spacing: 0.06em;
+          display: flex;
+          align-items: center;
+          letter-spacing: 0.06em;
 
-color: #FFFFFF;
+          color: #ffffff;
         }
 
         .code {
@@ -497,119 +543,94 @@ color: #FFFFFF;
           font-size: 1.25rem;
           line-height: 1.5;
         }
-.planet_x_logo {
+        .planet_x_logo {
+          width: 246px;
+          height: 57px;
+          left: 223px;
+          top: 70px;
 
-width: 246px;
-height: 57px;
-left: 223px;
-top: 70px;
+          font-family: "Trispace";
+          font-style: normal;
+          font-weight: 800;
+          font-size: 50px;
+          line-height: 57px;
+          /* identical to box height */
 
-font-family: 'Trispace';
-font-style: normal;
-font-weight: 800;
-font-size: 50px;
-line-height: 57px;
-/* identical to box height */
+          color: #ffffff;
 
+          text-shadow: 2px 2px 6px rgba(200, 41, 221, 0.6);
+        }
+        .connect_wallet_large_icon {
+          position: absolute;
+          width: 24px;
+          height: 24px;
+          left: 204px;
+          top: 408px;
+          background: url("/img/vector.png");
+        }
+        .text_primary {
+          font-family: "Trispace";
+          font-style: normal;
+          font-weight: 500;
+          font-size: 16px;
+          line-height: 150%;
+          /* identical to box height, or 24px */
 
-color: #FFFFFF;
+          color: #ffffff;
+        }
 
-text-shadow: 2px 2px 6px rgba(200, 41, 221, 0.6);
-}
-.connect_wallet_large_icon {
-  position: absolute;
-width: 24px;
-height: 24px;
-left: 204px;
-top: 408px;
-background: url('/img/vector.png');
-}
-.text_primary { 
-  width: 160px;
-  height: 24px;
-  
-  /* df l */
-  
-  font-family: 'Trispace';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 150%;
-  /* identical to box height, or 24px */
-  
-  display: flex;
-  align-items: center;
-  text-align: center;
-  letter-spacing: 0.06em;
-  
-  color: #FFFFFF;
-  
-  
-  /* Inside auto layout */
-  
-  flex: none;
-  order: 1;
-  flex-grow: 0;
-}
+        .text_secondary {
+          font-family: "Trispace";
+          font-style: normal;
+          font-weight: 700;
+          font-size: 32px;
+          line-height: 36px;
+          letter-spacing: 0.13em;
 
-.text_secondary  {
+          color: #ffffff;
+        }
 
-width: 600px;
-height: 69px;
-left: 136px;
-top: 481px;
+        .header_text {
+          width: 109px;
+          height: 23px;
+          left: 892px;
+          top: 90px;
 
-font-family: 'Trispace';
-font-style: normal;
-font-weight: 700;
-font-size: 32px;
-line-height: 36px;
-letter-spacing: 0.13em;
+          font-family: "Trispace";
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 23px;
+          /* identical to box height */
 
-color: #FFFFFF;
-}
-.header_text { 
-  width: 109px;
-height: 23px;
-left: 892px;
-top: 90px;
+          text-decoration-line: underline;
 
-font-family: 'Trispace';
-font-style: normal;
-font-weight: 400;
-font-size: 20px;
-line-height: 23px;
-/* identical to box height */
+          color: #ffffff;
+        }
 
-text-decoration-line: underline;
+        .header_text:hover {
+          text-decoration-line: none;
+        }
 
-color: #FFFFFF;
-}
+        .connect_button {
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          padding: 8px 16px;
+          gap: 8px;
 
-.header_text:hover {
-  text-decoration-line: none;
-}
+          width: 199px;
+          height: 40px;
 
-.connect_button {
+          background: #c829dd;
+          border-radius: 4px;
 
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 16px;
-  gap: 8px;
-  
-  width: 199px;
-  height: 40px;
-  
-  background: #C829DD;
-  border-radius: 4px;
-  
-  /* Inside auto layout */
-  
-  flex: none;
-  order: 0;
-  flex-grow: 0;
-}
+          /* Inside auto layout */
+
+          flex: none;
+          order: 0;
+          flex-grow: 0;
+        }
         .logo {
           height: 1em;
           margin-left: 0.5rem;
@@ -629,39 +650,37 @@ color: #FFFFFF;
           gap: 2rem;
         }
 
-
         .info {
-    flex: display;;    
-height: 57px;
-left: 372px;
-top: 915px;
-align-self: center;
-font-family: 'Trispace';
-font-style: normal;
-font-weight: 800;
-font-size: 24px;
-line-height: 41px;
+          flex: display;
+          height: 57px;
+          left: 372px;
+          top: 915px;
+          align-self: center;
+          font-family: "Trispace";
+          font-style: normal;
+          font-weight: 800;
+          font-size: 24px;
+          line-height: 41px;
 
-color: #FFFFFF;
+          color: #ffffff;
 
-text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.2);
+          text-shadow: 2px 2px 6px rgba(255, 255, 255, 0.2);
         }
 
         .info_box {
-        
           align-items: center;
           margin: 4rem;
           padding-top: 2rem;
-      align-self: center;
+          align-self: center;
           width: 60%;
-          padding:2rem 2rem 1rem 2rem;
+          padding: 2rem 2rem 1rem 2rem;
           height: 96px;
-left: 204px;
-right: 204px;
-top: 900px;
+          left: 204px;
+          right: 204px;
+          top: 900px;
 
-background: #2B229F;
-border-radius: 30px;
+          background: #2b229f;
+          border-radius: 30px;
         }
       `}</style>
     </>
