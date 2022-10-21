@@ -327,7 +327,7 @@ const Index: NextPage = () => {
       <section>
         <div className=" flex flex-row  ">
           <div className="side_illustration ">
-sadda
+
           </div>
           <div className="flex flex-col">
 
