@@ -196,7 +196,7 @@ const Index: NextPage = () => {
           <Link href="/">
             <div className="pt-2 py-6 flex gap-4 flex-row justify-between items-center ">
               <img src="img/LOGO.png" height="100" width="100" alt="" />
-              <h1 className="planet_x_logo ">Planet X</h1>
+              <h1 className="planet_x_logo ">Planet X - eSports Betting to the Moon!</h1>
             </div>
           </Link>
 
