@@ -257,7 +257,7 @@ const Index: NextPage = () => {
           <div className="flex flex-row   ">
             <div>
               {/* <Image src={"/img/star.png"} width={64} height={64} alt="" /> */}
-              <Image src={"/img/logo.png"} width={64} height={64} alt="logo" />
+              <img src="img/logo.png" height="64" width="64" alt="" />
             </div>
             <p className="description_box">
               PLANET X is an E-sports crypto betting platform
