@@ -196,7 +196,7 @@ const Index: NextPage = () => {
           <Link href="/">
             <div className="pt-2 py-6 flex gap-4 flex-row justify-between items-center ">
               <img src="img/LOGO.png" height="100" width="100" alt="" />
-              <h1 className="planet_x_logo ">Planet X - eSports Betting to the Moon!</h1>
+              <h1 className="planet_x_logo ">Planet X</h1>
             </div>
           </Link>
 
@@ -239,8 +239,8 @@ const Index: NextPage = () => {
                 Coming from PLANET X, betting to the moon
               </p>
               <p className="description">
-                Build for you from the start. Place bets on E-sports games
-                together, on a simple and distructive platform.
+                Built for you from the start. Place bets on E-sports games
+                together, on a simple platform.
               </p>
             </div>
 
@@ -256,9 +256,10 @@ const Index: NextPage = () => {
         <div className="flex flex-row items-center justify-center info_box   ">
           <div className="flex flex-row   ">
             <div>
+              {/* <Image src={"/img/star.png"} width={64} height={64} alt="" /> */}
               <Image src={"/img/logo.png"} width={64} height={64} alt="logo" />
             </div>
-            <p className="info">
+            <p className="description_box">
               PLANET X is an E-sports crypto betting platform
             </p>
           </div>
